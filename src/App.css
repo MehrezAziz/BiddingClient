@@ -1,0 +1,922 @@
+*{
+  box-sizing: border-box;
+}
+/* Light mode styles */
+body {
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
+.dark-mode-Heaher {
+  background-color: #333;
+  color: white;
+}
+.light-mode-Heaher {
+  background-color: white;
+  color: black;
+}
+main{
+  padding: 10px;
+  max-width: 95%;
+  margin :0 auto;  
+  overflow: auto;
+}
+main::-webkit-scrollbar {
+  width: 10px; 
+}
+
+img{
+  max-width: 100%;
+}
+a{
+  cursor: pointer;
+}
+header{
+  border-bottom: 1px solid lightgray;
+  padding-bottom:17px;
+  display : flex;
+  justify-content: space-between;
+  margin-top:20px;
+  margin-bottom: 50px;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 100%;
+
+}
+@media screen and (min-width: 768px) {
+  div.post{
+    grid-template-columns: 0.9fr 1.1fr;
+
+  }
+  main{
+    width:75%;
+  }
+}
+header a{
+  text-decoration: none;
+  color: inherit;
+  
+}
+header a.logo{
+  font-weight: bold; 
+  font-size: 1.5rem;
+}
+header nav{
+  display: flex;
+  gap: 15px;
+  
+}
+div.post{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border: 1px solid #ddd; /* Add border with color */
+  border-radius: 10px;
+  padding : 8px;
+}
+div.post:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+div.post img{
+  border-radius: 10px;
+}
+
+div.post  div.texts h2{
+ margin: 0;
+ font-size: 1.8rem;
+}
+.containerInfoBiddingButton{
+  display:flex;
+  justify-content:space-between;
+  position: relative;
+}
+.BiddingButton{
+  margin:  5px;
+  background-color:green;
+  padding:3px 6px 6px 6px;
+  border-radius:10px;
+  height:100%;
+  font-size:1.1rem;
+  cursor:cell;
+  color:white;
+  display:inline-flex;
+  gap:5px;
+  user-select: none;
+}
+.BiddingButton  svg{
+margin-top:3px;
+}
+.BiddingButton:hover{
+border:2px solid lightgray;
+}
+
+.biddingBox{
+  width:238px;
+  padding:5px;
+  height:152px;
+  border: 2px solid lightgray;
+  border-radius:3px;
+  position: absolute;
+  right:81px;
+  top:5px;
+  overflow:auto;
+  background-color:white;
+  color:black;
+  user-select: none;
+  z-index: 999;
+}
+.biddingBoxInsidePostPage{
+  top:44px;
+  z-index: 999;
+  width:237px;
+  padding:5px;
+  height:180px;
+  border: 2px solid lightgray;
+  border-radius:3px;
+  position: absolute;
+  overflow:auto;
+  background-color:white;
+  color:black;
+  user-select: none;
+}
+.biddingBoxInsidePostPage h4{
+  text-align:center;
+  margin: 2px 0 20px 0;
+  cursor: context-menu;
+}
+.biddingBoxInsidePostPage h4:hover{
+color:green;
+}
+.biddingBoxInsidePostPage input{
+  margin: 17px 0 20px 0;
+  
+}
+.biddingBox form  h4{
+  margin:0 0 10px 0;
+  text-align:center;
+  cursor: context-menu;
+}
+.infosBidding{
+  margin-top:85px;
+}
+.tileInBiddingInfo{
+  font-weight:bold;
+}
+.infosBidding h2{
+  color: green;
+}
+.biddingBox form h4:hover{
+  color: rgba(11,156,49);
+}
+.sendOverbid svg{
+  width: 1rem;
+  margin:0 5px;
+  
+}
+.sendOverbidWhatsapp,
+.sendOverbid {
+ height:30px;
+ display:inline-flex;
+ justify-content:left;
+ margin: 0;
+ 
+}
+.sendOverbidWhatsapp{
+  background-color:rgba(49,200,11);
+  width:116px;
+}
+.biddingBox form input{
+margin:10px 0;
+}
+div.post div.texts a{
+  text-decoration: none;
+  color: inherit;
+}
+div.post p.info{
+  margin: 6px 0;
+  color: #888;
+  font-size: .7rem;
+  font-weight: bold;
+  display: flex;
+  gap: 10px;
+}
+div.post p.info .author{
+  color: #333;
+  
+}
+div.post p.summary {
+  margin: 10px 0 20px 0;
+  line-height: 1.4rem;
+  
+}
+
+form{
+  max-width: 600px;
+  margin : 0 auto;
+  
+}
+
+input{
+  display : block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding :6px 10px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+form.login h1  , form.register h1{
+  text-align: center;
+  
+}
+div.post-page div.image{
+  display: flex;
+  overflow: hidden;
+}
+
+div.post-page div.image img{
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+
+}
+div.post-page   a{
+  color: #333;
+  text-decoration: underline;
+}
+div.post-page   h1{
+  text-align: center;
+  margin: 10px 0 5px;
+}
+div.post-page time{
+  text-align: center;
+  display: block;
+  font-size: .7rem;
+  color: #aaa;
+}
+.UsernamePostPage{
+  
+  color: black; /* Text color */
+  margin-left:5px;
+  text-shadow: 
+    -1px -1px 0 white,  
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 lightgray;
+}
+div.post-page  div.author {
+  text-align: center;
+  margin-bottom:20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-decoration:none;
+}
+p.summary{
+  max-height:94px;
+  overflow: auto;
+}
+
+div.post-page  div.content p{
+  line-height: 1.6rem;
+}
+div.edit-row{
+  display:flex;
+  justify-content:center;
+  margin-bottom:20px;
+  position: relative;
+}
+.overbid-now,
+div.post-page a.edit-btn{
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: inline-flex;
+  border-radius:5px;
+  gap: 5px;
+  align-items: center;
+  margin : 0 10px;
+  user-select: none;
+}
+.edit-btn-Post{
+  background-color: #333;
+}
+.edit-btn-Bidding{
+  background-color:green;
+}
+.overbid-now{
+  background-color:green;
+  border: 2px solid white;
+
+}
+.overbid-now:hover{
+border: 2px solid lightgray;
+}
+.MessageOnDelete{
+  display:flex;
+  justify-content:center;
+  font-size:1.6rem;
+  align-items:center;
+  gap:10px;  
+}
+.MessageOnDelete svg{
+  margin-top:5px;
+}
+.spinner {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 0.25rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top-color: #007bff;
+  animation: spinner-animation 0.6s linear infinite;
+}
+.parent-container {
+  padding-top:170px;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
+
+
+@keyframes spinner-animation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+div.post-page a.overbid-now:hover,
+div.post-page a.edit-btn:hover,
+div.post-page a.delete-btn:hover{
+border:2px solid gray;
+padding: 8px 15px;
+}
+.titleOfCreatePost{
+  text-align:center;
+}
+.optionsOfCreatePost,
+.descriptionOfCreatePost{
+  margin-bottom:3px;
+  text-align:center;
+  font-family:solid;
+  color: rgba(0,0,0,0.7);
+}
+.optionsOfCreatePost{
+  margin-top:0px;
+  margin-bottom:21px;
+}
+.redStart{
+  color:red;
+}
+div.userLogo span{
+  font-size: 1.2rem;
+  
+}
+div.userLogo svg{
+  color: gray;
+}
+.userLink{
+  display: flex;
+   gap:15px;
+   border: 1px solid lightgray;
+   border-radius:3px;
+   align-items: center;
+   padding:5px;
+   cursor:  pointer;
+
+}
+
+.userLinkProfile{
+   position: relative;
+}
+.userLinkMenu{
+  display: flex;
+  gap:15px;
+  align-items: center;
+  padding:5px;}
+
+@media screen and (min-width: 768px) {
+  div.post{
+    grid-template-columns: 0.9fr 1.1fr;
+
+  }
+}
+@media screen and (max-width: 610px) {
+  .userLink{
+    gap:5px;
+    padding: 3px;
+  }
+  .userLinkMenu{
+    gap:10px;
+    padding: 3px;
+  }
+  
+}
+
+.menu-bar {
+  position: absolute;
+  top: calc(100% + 5px); /* Positions the menu bar below the profile picture */
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  z-index: 1;
+  cursor: pointer;
+
+}
+.menu-item {
+  padding: 8px 15px;
+  cursor:pointer;
+  border-bottom: 1px solid #ccc;
+  width: 350px;
+  color:black;
+}
+@media screen and (max-width: 610px) {
+  .menu-item {
+    width:200px;
+  }
+}
+.menu-item:last-child {
+  border-bottom: none; /* Remove bottom border from the last item */
+}
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+.phoneFieldGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.selectCountry {
+  flex: 1;  
+}
+
+.phoneNumberInput {
+  flex: 2;
+  
+}
+.CountrySelect{
+  display : block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding :5px 7px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.selectCountry{
+  display : block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding :5px 7px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+.error{
+  font-size:0.8rem;
+  padding-bottom:10px;
+  padding-left:5px;
+  color: red;
+}
+.password-container {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-top:2px;
+
+}
+
+.toggle-password :hover{
+  transform: scale(1.2);
+}
+.Bio{
+  text-align:center;
+  margin-bottom:0;
+}
+
+button,
+.button-21 {
+  align-items: center;
+  appearance: none;
+  background-color: #3EB2FD;
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 7px;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: CircularStd,sans-serif;
+  font-size: 1rem;
+  height: auto;
+  justify-content: center;
+  line-height: 1.5;
+  margin: 15px 0;
+  width:63%;
+  padding: 6px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s,background-position .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+button {
+  width:100%;
+}
+
+
+
+button:hover,
+.button-21:hover {
+  box-shadow: gray 0 0 0 2px, -3px 4px 5px rgba(0,50,10,0.1), 0px 2px 2px rgba(81,41,10,0.2);
+}
+
+button :focus:not(:active),
+.button-21:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+div.menuHeader{
+  text-align:center;
+  line-height: .9rem;
+}
+svg{
+  height: 21px;
+}
+.ProfilePage{ 
+  text-align:center;
+}
+
+.containerProfile{
+  align-items: center;
+  flex-direction:column;
+  text-align:center;
+  display:flex;
+  align-content: center;
+  justify-content:center;
+  color:black;
+}
+
+.checked {
+  color: orange;
+}
+.usernameProfile{
+  margin-bottom:35px ;
+  margin-top:5px;
+}
+.followers-nbPosts-rate{
+display:inline-flex;
+justify-content:space-between;
+gap:35px;
+margin:35px 10px ;
+
+}
+.followers ,
+.nbPosts,
+.rate {
+display: flex;
+flex-direction: column;
+}
+.leftside{
+  margin:25px; 
+  padding: 30px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,200,0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.9);
+}
+.leftside:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,200,0.2);
+}
+.rightside{
+ 
+  margin:  25px;
+  width: 80%;
+}
+@media screen and (max-width: 510px) {
+  .rightside{
+    width:95%
+  }
+}
+.showPosts{
+  border:solid 1px rgba(0,0,0,0.05);
+  border-radius:100px;
+  padding:6px 15px;
+  position: relative;
+  cursor: pointer;
+
+}
+.showPosts{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-bottom: 30px ;
+  margin-top: 10px ;
+  padding-bottom:0;
+}
+.showPosts:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.showPosts:hover .triangleShowPosts {
+  font-size: 1.2em; 
+  transition: font-size 0.3s ease; /* Smooth transition */
+}
+
+@media screen and (min-width: 460px) {
+  .star{
+    font-size:15px !important;
+  }
+}
+@media screen and (min-width: 500px) {
+  .star{
+    font-size:100%;
+  }
+}
+@media screen and (max-width: 460px) {
+  .star{
+    font-size:11px !important;
+  }
+}
+
+.fpr{
+  color:rgba(0,0,200);
+}
+.phoneNumberProfile{
+  font-family:solid;
+  font-size:1.2rem;
+}
+.draggable {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0,0,0,0.2);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  cursor: grab;
+  z-index: 1000; /* Ensure it appears on top of other elements */
+  bottom: 20px; /* Adjust the distance from the bottom */
+   /* Center horizontally */
+}
+
+
+/*  car's features*/
+.formContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color:rgba(0,0,0,0);
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(0,0,0,0.7);
+  font-family:calibri;
+}
+
+.formInput {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0);
+
+}
+
+.formInput:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+.inputWithSuffix {
+  position: relative;
+  display: inline-block;
+  margin-right:20px;
+  width:100%;
+
+}
+
+.inputWithSuffix .suffix {
+  position: absolute;
+  top: 35%;
+  right: 10px; 
+  transform: translateY(-50%);
+  color: #555;
+  z-index: -1;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+.content{}
+.otherFeatures{
+  margin: 20px 10px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.oneFeatureCar{
+  display:flex;
+  flex-direction:column;
+  border: solid 2px rgba(11,156,49,0.1);
+  border-radius:15px;
+  padding:3px 20px;
+  margin:5px;
+  width:145px;
+}
+.nounOfFeature{
+  color: rgba(11,156,49,0.6);
+  font-family:italy;
+  font-size:0.8rem;
+}
+.SmallImageEditPage{
+  width:20%;
+}
+.delete-btn,
+div.post-page a.delete-btn{
+  background-color: rgba(200,0,0,0.8);
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  display: inline-flex;
+  border-radius:5px;
+  gap: 5px;
+  align-items: center;
+  max-width:200px;
+}
+div button.deleteButton{
+  background-color: rgba(255,0,0,0.8);
+  width:52%;
+  display:flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; 
+  font-size:0.9rem;
+  gap:5px;
+}
+/*Header dark mode checkbox*/
+.DarkUsed{
+  border-radius:100%;
+  margin:3px;
+  cursor: pointer;
+}
+.switchToDarkMode{
+display: flex;
+justify-content:flex-start;
+gap:10px;
+max-width:200px;
+font-size:0.9rem;
+}
+.titleSettings{
+display:flex;
+justify-content:center;
+margin: 5px 0 50px 0;
+
+}
+.YouDoNotHaveAccount{
+  font-size:0.8rem;
+  margin-left:2px;
+}
+.YouDoNotHaveAccount span{
+  margin-left:20px;
+  color:rgba(0,100,255,0.9);
+  cursor: pointer;
+  padding:5px;
+  text-decoration:none;
+}
+
+.YouDoNotHaveAccount span:hover{
+  color:blue;
+}
+.LinkWithoutUnderline {
+  text-decoration: none; /* Remove underline */
+}
+.BorderOnFocus{
+  border:1px solid green;
+  border-radius:5px;
+}
+.Home{
+  text-shadow: 2px 2px 4px rgba(0, 0, 50,0.8);
+
+}
+.HomeOnFocus{
+  text-shadow: 2px 2px 4px rgba(0, 50, 0,0.8);
+
+}
+.styleHeader{
+  position: fixed;
+  margin-top:0px;
+  padding-top:8px;
+  padding-bottom:10px;
+  z-index: 1000;
+}
+.addPaddingTop{
+  padding-top:65px;
+}
+
+/*time axis inside post.js*/
+.time-axis {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+  margin:15px 0 0px 0;
+}
+.ta2{
+  border-top: 1px;
+  border-bottom: 1px solid #eee;
+
+
+}
+
+.time-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  margin:5px;
+}
+/* */
+.time-marker .date {
+  margin-bottom: 5px;
+}
+
+.time-marker .time {
+  font-weight: bold;
+}
+.postFirstPrice{
+  text-align:center;
+}
+.postFirstPriceTitle{
+  font-weight:bold;
+  font-family:italy;
+}
+.postFirstPriceValue{
+  font-size:0.8rem;
+  color:green;
+}
+.whatsapp-ico svg{
+  width: 1.5rem;
+  margin:5px 1px 0 3px;
+  fill:white;
+}
+.containerSendButtons{
+  display: inline-flex;
+  gap: 6px;
+}
+@media screen and (min-width:768px) {
+  div.post-page div.image{
+    max-width: 60%;
+    margin-left: auto; /* auto left margin */
+    margin-right: auto;
+  }
+  .ta2{
+    max-width:60%;
+    margin-left: auto; /* auto left margin */
+    margin-right: auto;
+  }
+}
+.containerImageBidding{
+  display:flex;
+  justify-content:center;
+}
+.SmallImageEditBidding{
+  max-width:70%;
+}
+.SmallImageEditBidding img{
+  border-radius:5px;
+  border: 1px solid lightgray;
+}
+
