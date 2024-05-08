@@ -47,7 +47,7 @@ export default function LoginPage(){
     }
         if(redirect){
            
-           window.location.reload();   //it is a
+           //window.location.reload();   //it is a
            window.location.href = '/'; //bad method
         }
 

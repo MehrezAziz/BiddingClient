@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import { UserContext } from "./UserContext";
 import {Navigate, useLocation} from "react-router-dom";
 import useDarkMode from "./UseDarkMode";
-
+import { API_URL } from "./myEnv";
 export default function Header(){
    
     const [username, setUsername]=useState(null);
@@ -25,7 +25,7 @@ export default function Header(){
     
 
     useEffect(()=>{
-        fetch('http://localhost:4000/profile',headers).then(res =>{
+        fetch(API_URL()+'/profile',headers).then(res =>{
             res.json().then( userInfo =>{
                 setUsername(userInfo.username);
                 setPhoneNumber(userInfo.phoneNumber);
@@ -38,7 +38,7 @@ export default function Header(){
     function logout(){
         const confirmation=window.confirm("Are you sure you want to Logout?");
         if (confirmation){
-        fetch('http://localhost:4000/logout',{
+        fetch(API_URL()+'/logout',{
             credentials: 'include',
             method:'POST',
         });
