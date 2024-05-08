@@ -2,6 +2,7 @@ import { useState,useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Post from "../post";
 import DraggableButton from "../DraggableButton";
+import {API_URL} from "../myEnv";
 
 
 export default function ProfilePage(){
@@ -17,7 +18,7 @@ export default function ProfilePage(){
 
 
     useEffect(()=>{
-        fetch('http://localhost:4000/profile/'+id,{           
+        fetch(API_URL()+'/profile/'+id,{           
              credentials:'include',
         })
         .then(response =>{
@@ -30,7 +31,7 @@ export default function ProfilePage(){
         });
     },[id]);
     useEffect(()=>{
-        fetch('http://localhost:4000/post')
+        fetch(API_URL()+'/post')
         .then(response =>{
             response.json().then(postInfo =>{
                 setPostsFiltered(postInfo.filter(post=> post.author._id===id))

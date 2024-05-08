@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
+import {API_URL} from "../myEnv";
 
 export default function EditBidding(){
     const {id}=useParams(); 
@@ -13,7 +14,7 @@ export default function EditBidding(){
     const [bannedPost,setBannedPost]=useState(false);
 
     useEffect(()=>{
-        fetch('http://localhost:4000/post/'+id)
+        fetch(API_URL()+'/post/'+id)
         .then(response =>{
             response.json().then(postInfo=>{
                 setTypeBidding(postInfo.typeBidding);
@@ -36,7 +37,7 @@ export default function EditBidding(){
         data.set('id',id);
 
         const response=
-        await fetch('http://localhost:4000/post',{
+        await fetch(API_URL()+'/post',{
            method: 'PUT',
            body:data,
            credentials: 'include',
@@ -56,7 +57,7 @@ export default function EditBidding(){
             { cover&&
             <div className="containerImageBidding">
                 <div className="SmallImageEditBidding">
-                    <img src={`http://localhost:4000/${cover}`} alt="car image"/>
+                    <img src={`${API_URL()}/${cover}`} alt="car image"/>
                 </div>
             </div>
             }

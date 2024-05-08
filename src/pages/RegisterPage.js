@@ -2,6 +2,7 @@ import { useState,useContext} from "react";
 import { UserContext } from "../UserContext";
 import {Navigate,Link } from "react-router-dom";
 import PhoneNumberForm from "../PhoneNumberForm";
+import {API_URL} from "../myEnv";
 
 
 export default function RegisterPage(){
@@ -15,7 +16,7 @@ export default function RegisterPage(){
         ev.preventDefault();
         
         const response=
-        await fetch('http://localhost:4000/register',{
+        await fetch(API_URL()+'/register',{
             method: 'POST',
             body: JSON.stringify({username,password,phoneNumber}),
             headers: {'Content-Type':'application/json'},
@@ -43,7 +44,7 @@ export default function RegisterPage(){
             }
             
             const rep=
-            await fetch('http://localhost:4000/login',{
+            await fetch(API_URL()+'/login',{
                 method:'POST',
                 body: JSON.stringify({username,password,phoneNumber}),
                 headers: {'Content-Type':'application/json'},

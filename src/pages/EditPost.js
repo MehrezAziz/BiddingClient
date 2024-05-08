@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Editor from "../Editor";
+import {API_URL} from "../myEnv";
 
 export default function EditPost(){
 
@@ -24,7 +25,7 @@ export default function EditPost(){
     const [redirect,setRedirect]= useState(false);
 
     useEffect(()=>{
-        fetch('http://localhost:4000/post/'+id)
+        fetch(API_URL()+'/post/'+id)
         .then(response =>{
             response.json().then(postInfo=>{
                 setTitle(postInfo.title);
@@ -63,7 +64,7 @@ export default function EditPost(){
         }
 
         const response=
-        await fetch('http://localhost:4000/post',{
+        await fetch(API_URL()+'/post',{
            method: 'PUT',
            body:data,
            credentials: 'include',
@@ -77,7 +78,7 @@ export default function EditPost(){
         const confirmation =window.confirm("Are you sure you want to delete this post?\n");
         if (confirmation){
             const response=
-            await fetch(`http://localhost:4000/deletepost/${id}`, {
+            await fetch(API_URL()+`/deletepost/${id}`, {
                 method: 'DELETE',
                 headers: {
                   'Content-Type': 'application/json'
@@ -136,7 +137,7 @@ export default function EditPost(){
                 onChange={ev => setSummary(ev.target.value)}/> 
             { !files &&
             <div className="SmallImageEditPage">
-                <img src={`http://localhost:4000/${cover}`} alt="car image"/>
+                <img src={`${API_URL()}/${cover}`} alt="car image"/>
             </div>
             }
             { files &&

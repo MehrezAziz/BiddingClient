@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Post from "../post";
 import DraggableButton from "../DraggableButton";
+import {API_URL} from "../myEnv";
 
 
 export default function IndexPage() {
@@ -15,7 +16,7 @@ export default function IndexPage() {
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
     */
-    fetch(`http://localhost:4000/profile`,{
+    fetch(API_URL()+`/profile`,{
             credentials:'include',
         })
         .then(response =>{
@@ -23,7 +24,7 @@ export default function IndexPage() {
                 setProfile(userInfo);
             });
     });
-    fetch('http://localhost:4000/post')
+    fetch(API_URL()+'/post')
       .then(response => response.json())
       .then(posts => setPosts(posts));
       

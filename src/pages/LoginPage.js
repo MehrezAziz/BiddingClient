@@ -2,6 +2,7 @@ import {  useContext, useState } from "react";
 import {Link, Navigate} from "react-router-dom";
 import { UserContext } from "../UserContext";
 import PhoneNumberForm from "../PhoneNumberForm";
+import {API_URL} from "../myEnv";
 
 export default function LoginPage(){
     const [username, setUsername]=useState('');
@@ -9,12 +10,13 @@ export default function LoginPage(){
     const [redirect, setRedirect]=useState(false);
     const {setUserInfo}=useContext(UserContext);
     const [phoneNumber, setPhoneNumber]= useState('');
+    
+    
 
     
    
     async function login(event){
         event.preventDefault(); 
-
         const headers = {
             method:'POST',
             body: JSON.stringify({username,password,phoneNumber}),
@@ -24,7 +26,7 @@ export default function LoginPage(){
         
         
         const response=
-        await fetch('http://localhost:4000/login',{
+        await fetch(API_URL()+`/login`,{
             method:'POST',
             body: JSON.stringify({username,password,phoneNumber}),
             headers: {'Content-Type':'application/json'},

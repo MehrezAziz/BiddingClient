@@ -3,6 +3,7 @@ import ReactQuill from "react-quill";
 import {Navigate} from "react-router-dom";
 import 'react-quill/dist/quill.snow.css'
 import Editor from "../Editor";
+import {API_URL} from "../myEnv";
 
 
 
@@ -87,7 +88,7 @@ async function createNewPost(ev){
     };
     
     try {
-        const response = await fetch('http://localhost:4000/post', headers);
+        const response = await fetch(API_URL()+'/post', headers);
         if (response.ok){
             setRedirect(true);
         }

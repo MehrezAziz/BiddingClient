@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {  useParams } from "react-router-dom";
+import { API_URL } from "../myEnv";
 
 
 export default function Settings({ darkMode, toggleDarkMode }){
@@ -16,7 +17,7 @@ export default function Settings({ darkMode, toggleDarkMode }){
     }
     if (conf){
     const response=
-      await fetch('http://localhost:4000/deleteprofile/'+id, {
+      await fetch(API_URL()+'/deleteprofile/'+id, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -29,7 +30,7 @@ export default function Settings({ darkMode, toggleDarkMode }){
   
   }
   if (isDeletedProfile){
-    fetch('http://localhost:4000/logout',{
+    fetch(API_URL()+'/logout',{
             credentials: 'include',
             method:'POST',
         });

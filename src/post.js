@@ -2,6 +2,7 @@ import {format} from "date-fns";
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { formatDistanceToNow } from 'date-fns';
+import {API_URL} from "./myEnv";
 
 export default function Post({_id,title,summary
   ,cover,content,createdAt,author,userInfo
@@ -33,7 +34,7 @@ useEffect(() => {
       
     <div className="image">
         <Link to={`/post/${_id}`} title="Click to view more information">
-        <img src={"http://localhost:4000/"+cover} alt="image"/> 
+        <img src={API_URL()+"/"+cover} alt="image"/> 
         </Link>
     </div>
 

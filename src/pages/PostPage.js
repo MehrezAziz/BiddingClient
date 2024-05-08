@@ -4,6 +4,7 @@ import { useParams ,Link, Navigate} from "react-router-dom";
 //import {EditPost} from "EditPost";
 import { formatDistanceToNow } from 'date-fns';
 import {format} from "date-fns";
+import {API_URL} from "../myEnv";
 
 
 export default  function PostPage(){
@@ -38,14 +39,14 @@ useEffect(() => {
 
     useEffect(()=>{
         setIsLoading(true);
-        fetch(`http://localhost:4000/post/${id}`)
+        fetch(API_URL()+`/post/${id}`)
         .then(response =>{
             response.json().then(postInfo=>{
                 setPostInfo(postInfo);
                 setIsLoading(false);
             });
         });
-        fetch(`http://localhost:4000/profile`,{
+        fetch(API_URL()+`/profile`,{
             credentials:'include',
         })
         .then(response =>{
@@ -60,7 +61,7 @@ useEffect(() => {
         const confirmation =window.confirm("Are you sure you want to delete this post "+postInfo.title+"?\n");
         if (confirmation){
             const response=
-            await fetch(`http://localhost:4000/deletepost/${id}`, {
+            await fetch(API_URL()+`/deletepost/${id}`, {
                 method: 'DELETE',
                 headers: {
                   'Content-Type': 'application/json'
@@ -172,7 +173,7 @@ useEffect(() => {
                 </div>
             )}        
             <div className="image">
-                <img src={`http://localhost:4000/${postInfo.cover}`} />
+                <img src={`${API_URL()}/${postInfo.cover}`} />
             </div>
             <div class="time-axis ta2">
                 <div class="time-marker start" title="Auction begin date ">

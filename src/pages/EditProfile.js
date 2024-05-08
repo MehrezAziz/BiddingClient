@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Editor from "../Editor";
+import {API_URL} from "../myEnv";
 
 export default function EditProfile() {
     const [showPassword, setShowPassword] = useState(false);
@@ -80,7 +81,7 @@ export default function EditProfile() {
     },[isPasswordFieldEmpty]);
     
     useEffect(()=>{
-        fetch('http://localhost:4000/profile',{           
+        fetch(API_URL()+'/profile',{           
              credentials:'include',
         })
         .then(response =>{
@@ -111,7 +112,7 @@ export default function EditProfile() {
         if(verifPassword(newPassword)){
 
         const response=
-        await fetch('http://localhost:4000/profile',{
+        await fetch(API_URL()+'/profile',{
            method: 'PUT',
            headers: {
             'Content-Type': 'application/json' 
